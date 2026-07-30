@@ -1,5 +1,6 @@
 import svgPaths from "./svg-c22ip1ll12";
 import imgImage321 from "./6074c26ebbcbf7af51fb1cca768037868d3be89b.png";
+import imgNameLogo from "./name-logo.png";
 import imgImage6 from "./47558cd0d955510852ad03d6b32e62ca6e176713.png";
 import img106E7618016342C5A74E488F5A183A59PicsartBackgroundRemover1 from "./134c3b06c56a646ed9c8e5816eed1e75d0ce1622.png";
 import img0744Ea1D8F5E4A07Bed04Ca8E713388ENoBgPreviewCarvePhotos1 from "./a2d9e5210ab21c995d55792db953649e7293dce4.png";
@@ -358,7 +359,14 @@ function Desktop() {
       <div className="-translate-x-1/2 absolute h-[1069px] left-[calc(50%+294.5px)] top-[-94px] w-[709px]" data-name="image-Photoroom (4) 1" data-reveal data-delay="140">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImagePhotoroom41} />
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Nunito',sans-serif] leading-[normal] left-[calc(50%+5.5px)] not-italic text-[147px] text-black text-center top-[815px] tracking-[10px] whitespace-nowrap" data-reveal data-delay="260">Васильева Анна</p>
+      <img
+        src={imgNameLogo}
+        alt="Васильева Анна — имя автора, написанное пузырьковыми буквами"
+        className="absolute left-[80px] top-[821px] w-[1280px] h-auto"
+        data-name="name logo"
+        data-reveal
+        data-delay="260"
+      />
       <div className="absolute bg-[#ff7a01] h-[57px] left-[115px] top-[576px] w-[281px]"  data-reveal data-delay="260" />
       <Group />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Nunito','Noto_Sans:Black',sans-serif] leading-[normal] left-[256.5px] text-[32px] text-black text-center top-[583px] uppercase w-[165px]" style={{ fontVariationSettings: '"CTGR" 0, "wdth" 100, "wght" 900' }} data-reveal data-delay="260">
