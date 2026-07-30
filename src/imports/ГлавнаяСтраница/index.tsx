@@ -361,7 +361,7 @@ function Desktop() {
       </div>
       <img
         src={imgNameLogo}
-        alt="Васильева Анна — имя автора, написанное пузырьковыми буквами"
+        alt="Васильева Анна — имя автора на розовых облачках-пузырях"
         className="absolute left-[80px] top-[821px] w-[1280px] h-auto"
         data-name="name logo"
         data-reveal
