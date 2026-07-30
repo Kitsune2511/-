@@ -1,0 +1,344 @@
+/* ── Self-hosted fonts (Cyrillic included) ─────────────────────────── */
+@import '@fontsource-variable/nunito/wght.css';
+@import '@fontsource-variable/nunito/wght-italic.css';
+@import '@fontsource/arimo/latin-400.css';
+@import '@fontsource/arimo/cyrillic-400.css';
+@import '@fontsource/arimo/latin-500.css';
+@import '@fontsource/arimo/cyrillic-500.css';
+@import '@fontsource/arimo/latin-700.css';
+@import '@fontsource/arimo/cyrillic-700.css';
+@import '@fontsource/arimo/latin-400-italic.css';
+@import '@fontsource/arimo/cyrillic-400-italic.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Nunito', sans-serif;
+  --font-body: 'Arimo', sans-serif;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ff7a01;
+  font-family: 'Arimo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #d4ff3f;
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #ffb066;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 8px;
+  border: 3px solid #ffb066;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #ffb066;
+}
+
+:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Page fade-in on load */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.page-shell {
+  animation: page-in 0.55s ease-out both;
+}
+
+/* ── Marquee strips ────────────────────────────────────────────────── */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Strip entrance — slides in from the left, keeping its inline rotation */
+@keyframes strip-in {
+  from {
+    opacity: 0;
+    translate: -180px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.strip-in {
+  animation: strip-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+
+/* ── Scroll reveal ─────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px) scale(0.985);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Floating llama ────────────────────────────────────────────────── */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.llama-float {
+  animation: float-y 6s ease-in-out infinite;
+  transition: filter 0.35s ease;
+}
+
+.llama-float:hover {
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28));
+}
+
+/* ── Hover micro-interactions ──────────────────────────────────────── */
+.uplift,
+.uplift-no-shadow {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.uplift:hover,
+.uplift-no-shadow:hover {
+  transform: translateY(-10px) rotate(-1deg);
+}
+
+.uplift:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 52px rgba(0, 0, 0, 0.32);
+}
+
+.icon-pop {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-pop:hover {
+  transform: scale(1.12) rotate(6deg);
+}
+
+.hover-grow {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-grow:hover {
+  transform: scale(1.1);
+}
+
+.contact-link {
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ec5aa0;
+}
+
+/* ── Design header nav buttons ─────────────────────────────────────── */
+.design-nav-btn > * {
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+.design-nav-btn:hover > div {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.85);
+}
+
+.design-nav-btn:hover > p {
+  transform: translateY(-4px);
+}
+
+.design-nav-btn:active > div {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.85);
+}
+
+/* ── Fixed site header ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  height: 64px;
+  padding: 0 clamp(10px, 2.5vw, 28px);
+  background: #ff7a01;
+  border-bottom: 3px solid #000;
+  transform: translateY(-110%);
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease;
+}
+
+.site-header--visible {
+  transform: translateY(0);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.site-header__logo {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.site-header__logo img {
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.site-header__logo:hover img {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.site-header__nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.6vw, 16px);
+  min-width: 0;
+}
+
+.nav-pill {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: clamp(9px, 2.2vw, 15px);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  color: #000;
+  background: #fefffb;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: clamp(5px, 1vw, 9px) clamp(10px, 2vw, 22px);
+  cursor: pointer;
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.nav-pill:hover {
+  background: #d4ff3f;
+  border-color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 0 #000;
+}
+
+.nav-pill:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 0 #000;
+}
+
+@media (max-width: 560px) {
+  .nav-pill:last-child {
+    max-width: 128px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Scroll progress bar along the header's bottom border */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: #d4ff3f;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .llama-float,
+  .strip-in,
+  .page-shell {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
