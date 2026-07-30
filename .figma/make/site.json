@@ -1,0 +1,12 @@
+{
+  "title": "Васильева Анна — креатор, стратег, менеджер маркетплейсов",
+  "description": "Портфолио Васильевой Анны: брендинг, стратегия, дизайн и аналитика. Креатор, стратег и менеджер маркетплейсов.",
+  "language": "ru",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
